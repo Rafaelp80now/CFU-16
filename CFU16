@@ -1,0 +1,29 @@
+# Importing the simplegui module
+import simplegui
+
+# Canvas size
+width = 200
+height = 200
+
+# Create a canvas to draw on
+frame = simplegui.create_frame("Happy Face", width, height)
+
+# Draw function to create the happy face
+def draw(canvas):
+    # Draw face (big circle in the center)
+    canvas.draw_circle((100, 100), 80, 3, "yellow", "yellow")
+
+    # Draw left eye (small circle on the left)
+    canvas.draw_circle((70, 70), 10, 2, "black", "black")
+
+    # Draw right eye (small circle on the right)
+    canvas.draw_circle((130, 70), 10, 2, "black", "black")
+
+    # Draw mouth (arc or smile)
+    canvas.draw_circle((100, 130), 40, 3, "black", "")  # Smiling arc (empty fill)
+
+# Set the draw function
+frame.set_draw_handler(draw)
+
+# Start the frame
+frame.start()
